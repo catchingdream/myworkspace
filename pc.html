@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网商银行</title>
+	<style>
+
+		html,body,div,p,h1,h2,h3,a,img,ul,li,span,em,i,dd{padding:0;margin:0;}
+		em{font-style: normal;}
+		li{list-style: none;}
+		a{text-decoration: none;}
+		html,body{overflow-x:hidden;background-color:#f8f8f8;}
+		img{
+			display: block;
+			border:0;
+			vertical-align: top;
+		}
+		/*正式*/
+		.m-formal{
+			width:990px;
+			margin:0 auto;
+	    	font-family: "PingFang SC","Helvetica Neue", Helvetica, STHeiTi, "Microsoft YaHei", Arial, sans-serif;
+		}
+		/*专属优惠--tab*/
+		.exclusive-offerbox{
+			width:100%;
+			height:110px;
+			background: url("https://img.alicdn.com/tfs/TB1_klVXwoQMeJjy0FpXXcTxpXa-990-110.png") no-repeat center top;
+		}
+		.exclusive-offerbox ul{
+			height:81px;
+			padding-top:29px;
+			margin:0 auto;
+		}
+		.exclusive-offerbox li{
+			display: inline-block;
+			vertical-align: top;
+			color:#a5a5a5;
+			width:326px;
+			height:64px;
+			padding:10px 0 7px 0;
+		}
+		.exclusive-offerbox li.current{
+			color:#fff;
+		}
+		.exclusive-offerbox li span{
+			display: block;
+			font-size:26px;
+			line-height: 32px;
+			text-align: center;
+		}
+		.exclusive-offerbox li em{
+			display: block;
+			font-size:14px;
+			line-height: 32px;
+			font-style:normal;
+			text-align: center;
+		}
+		.main-box{
+			width:100%;
+			background-color: #09b1bc;
+		}
+		.main-center{
+			width:980px;
+			margin:0 auto;
+			background-color:#6bd7de;
+		}
+		.main-truebox{
+			width: 923px;
+			border-left: 4px solid #09b1bc;
+			border-right: 4px solid #09b1bc;
+			margin:0 auto;
+			background-color: #fefbf5;
+		}
+		.main-truebox h2{
+			color:#383838;
+			font-size: 32px;
+			height:52px;
+			line-height: 52px;
+			text-align: center;
+			padding-bottom: 20px;
+		}
+		.tab-des{
+			width:486px;
+			height:207px;
+			margin:0 auto;
+			background: url("https://img.alicdn.com/tfs/TB1Dp6RXEgQMeJjy0FiXXXhqXXa-486-207.png") no-repeat center top;
+		}
+		.tab-des div{
+			width:380px;
+			padding:11px 0 0 40px;
+			color:#fff;
+		}
+		.tab-des p{
+			height:150px;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.tab-des p span{
+			font-size: 25px;
+			line-height: 39px;
+		}
+		.tab-des p em{
+			font-size: 54px;
+			line-height: 67px;
+			font-style: normal;
+			font-weight:900;
+		}
+		.tab-des .expiryDate,.favour .right .expiryDate{
+			color:#b56f00;
+			font-size:20px;
+			height:34px;
+			line-height: 34px;
+			font-style: normal;
+		}
+		.online-tips{
+			display: block;
+			color:#999;
+			font-size: 20px;
+			height:40px;
+			line-height: 40px;
+			text-align: center;
+		}
+		.tab-btu{
+			display: block;
+			text-decoration: none;
+			width:446px;
+			height:87px;
+			line-height: 87px;
+			background: url("https://img.alicdn.com/tfs/TB1vUM5X3oQMeJjy0FoXXcShVXa-446-174.png") no-repeat 0 0;
+			color:#fff;
+			font-size:35px;
+			text-align: center;
+			margin:30px auto 0;
+			font-weight: bold;
+		}
+		.tab-btu:hover{
+			background-position: 0 -87px;
+		}
+		.tips{
+			display: block;
+			color:#383838;
+			font-size:22px;
+			height:40px;
+			line-height: 40px;
+			text-align:center;
+			padding-bottom: 10px;
+		}
+		.tips em{
+			color:#fe543d;
+			font-weight:bold;
+		}
+		.line{
+			display: block;
+			width:864px;
+			height:1px;
+			margin:24px auto 33px;
+			background-color: #d6d4cf;
+		}
+		.live{
+			display: block;
+			color:#383838;
+			font-size: 30px;
+			line-height: 44px;
+			text-align: center;
+			padding-bottom: 18px;
+		}
+		.live-btu{
+			display: block;
+			text-decoration: none;
+			text-align:center;
+			width:189px;
+			color:#14c0c6;
+			font-size:29px;
+			height:39px;
+			line-height: 39px;
+			margin:0 auto;
+			border-bottom:2px solid #14c0c6;
+		}
+		.online{
+			padding:20px 0;
+		}
+		/*活动规则*/
+		.rule{
+			width:100%;
+			margin:20px 0 44px;
+			padding-bottom:26px;
+			background-color: rgba(1,162,162,.3);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C01a2a2,endColorstr=#4C01a2a2);
+		}
+		.rule-title{
+			width:100%;
+			height:85px;
+			background: url("https://img.alicdn.com/tfs/TB1Rq3pXwoQMeJjy0FpXXcTxpXa-990-85.png") no-repeat center top;
+			border-bottom: 1px solid #34a3a4;
+			color:#fff;
+			font-size: 28px;
+			font-weight: bold;
+			line-height: 86px;
+			text-align:center;
+		}
+		.rule dl{
+			width:868px;
+			margin:20px auto 0;
+			color:#fff;
+		}
+		.rule dl dt,.rule em{
+			font-size: 16px;
+			line-height: 36px;
+			font-weight: bold;
+		}
+		.rule dl dd,.rule span{
+			font-size: 14px;
+			line-height: 22px;
+		}
+		.rule span{
+			display: block;
+			width:868px;
+			margin:8px auto 0;
+			color:#fff;
+		}
+		/*pop*/
+		.pop-mask{
+			width:100%;
+			height:100%;
+			background-color:rgba(0,0,0,.6);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+			position: fixed;
+			left:0;
+			top:0;
+			z-index: 100;
+			display: none;
+		}
+		.pop{
+			width:662px;
+			position: fixed;
+			left:50%;
+			top:50%;
+			z-index: 101;
+			border-radius: 5px;
+			margin:-260px 0 0 -331px;
+			display: none;
+		}
+		/*我的抽奖结果*/
+		.pop0{
+			background-color:#fe543d; 
+		}
+		.pop .title{
+			display: block;
+			color:#fff;
+			font-size:29px;
+			line-height: 99px;
+			text-align: center;
+		}
+		.popbgimg{
+			background: url("https://img.alicdn.com/tfs/TB1YR7ZX3MPMeJjy1XbXXcwxVXa-621-1285.png") no-repeat center top;
+		}
+		.awardbox{
+			width:621px;
+			margin:0 auto;
+			padding-bottom: 10px;
+		}
+		.awardbox li{
+			width:100%;
+			height:196px;
+			background-position: 0 0;
+			position: relative;
+			margin-bottom: 10px;
+		}
+		.left{
+			width:300px;
+			height:196px;
+			padding-left: 54px;
+		}
+		.favour .left{
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.favour .left span{
+			color:#383838;
+			font-size: 26px;
+			line-height: 40px;
+		}
+		.favour .left p,.redpacket .left p{
+			color:#fe3526;
+			font-size: 26px;
+			line-height: 40px;
+			font-weight: bold;
+		}
+		.favour .right{
+			width:237px;
+			height:110px;
+			background-position: -384px -297px;
+			position: absolute;
+			right:37px;
+			top:52px;
+		}
+		.favour .right div{
+			color:#fff;
+			width:189px;
+			padding:7px 0 0 16px;
+		}
+		.favour .right p{
+			display: table-cell;
+			vertical-align: middle;
+			height: 77px;
+		}
+		.favour .right div span{
+			display: block;
+			font-size: 13px;
+			line-height: 21px;
+		}
+		.favour .right p em{
+			font-size: 34px;
+			line-height: 40px;
+			font-weight: bold;
+		}
+		.favour .right .expiryDate{
+			display: block;
+			font-size:12px;
+			line-height: 19px;
+			height:19px;
+		}
+		.redpacket .left div{
+			height:120px;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.redpacket .left div span{
+			font-size: 18px;
+			color:#666;
+			line-height: 30px;
+		}
+		.openylb-btu{
+			display: block;
+			width:196px;
+			height:46px;
+			border:2px solid #ff9203;
+			background-color: transparent;
+			color:#ff9203;
+			text-align:center;
+			font-size: 20px;
+			line-height: 46px;
+			border-radius:25px;
+		}
+		.openylb-btu:hover{
+			background-color:rgba(255,146,3,.08);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19ff9203,endColorstr=#19ff9203);
+		}
+		.redpacket .right{
+			width:155px;
+			height:172px;
+			background-position: 0 -233px;
+			position: absolute;
+			right:58px;
+			top:12px;
+		}
+		.redpacket .right span{
+			display: block;
+			color:#ff6215;
+			font-size: 38px;
+			font-weight: bold;
+			line-height: 70px;
+			padding:27px 0 0 55px;
+		}
+		.redpacket .right span em{
+			font-weight: normal;
+			font-size: 19px;
+		}
+		.close-btu{
+			display: block;
+			width:44px;
+			height:44px;
+			position: absolute;
+			right:0;
+			top:-64px;
+			background-position: -247px -237px;
+			cursor: pointer;
+		}
+		/*很抱歉没有中奖*/
+		.pop1,.pop2,.pop3{
+			background-color: #fff9ec;
+			padding: 20px 0;
+		}
+		.pop1 div{
+			width:621px;
+			height:324px;
+			margin:0 auto 28px;
+			background-position: 0 -429px;
+			font-size: 30px;
+			line-height: 114px;
+			text-align: center;
+			font-weight: 900;
+		}
+		.pop-btu{
+			display: block;
+			width:350px;
+			height:71px;
+			border-radius:38px;
+			background-color:#ff482f;
+			color:#fff;
+			text-align: center;
+			font-weight: bold;
+			font-size:32px;
+			margin:0 auto;
+			padding-top: 5px;
+		}
+		.pop-btu em{
+			display: block;
+			width:338px;
+			height:66px;
+			line-height:66px;
+			border-radius: 33px;
+			background-color: #fe543d;
+			margin:auto;
+		}
+		.pop-btu:hover{
+			background-color:#ff5235;
+		}
+		.pop-btu:hover em{
+			background-color:#ff5f45;
+		}
+		/*获得优惠资格*/
+		.pop2 li{
+			height:185px;
+		}
+		.own{
+			width:621px;
+			height:343px;
+			margin:0 auto 28px;
+			background-position: 0 -755px;
+		}
+		.own h2{
+			color:#383838;
+			font-size: 31px;
+			line-height: 43px;
+			text-align: center;
+			padding-top: 35px;
+		}
+		.own h2 span{
+			display: block;
+			color:#666;
+			font-size: 20px;
+			line-height: 32px;
+			text-align: center;
+			font-weight: normal;
+		}
+		.own div{
+			width:336px;
+			padding:20px 0 0 136px;
+		}
+		.own div p{
+			height:134px;
+			display: table-cell;
+			vertical-align: middle;
+			color:#fff;
+		}
+		.own div p span{
+			display: block;
+			font-size: 21px;
+			line-height: 35px;
+		}
+		.own div p em{
+			display: block;
+			font-size: 47px;
+			line-height: 62px;
+			font-weight: 900;
+		}
+		.pop2 .expiryDate{
+			font-size: 18px;
+			line-height: 32px;
+		}
+		.awards-tips{
+			display: block;
+			text-align: center;
+			color:#666;
+			height:26px;
+			line-height: 26px;
+			font-size: 20px;
+			margin-top:14px;
+		}
+		.awards-tips em{
+			display: inline-block;
+			height:26px;
+			width:18px;
+			background-color: #fe543d;
+			color:#fff;
+			border-radius: 2px;
+		}
+		/*翻牌获得5元*/
+		.pop3 .redpacket{
+			height:186px;
+			background-position: 0 -1099px;
+		}
+		.pop3 .left p span{
+			color:#383838;
+			font-size: 28px;
+			line-height: 43px;
+		}
+		.pop3 .left p{
+			font-size: 28px;
+			line-height: 43px;
+		}
+		.pop3 .left{
+			width:406px;
+			padding:20px 0 0 22px;
+		}
+		.pop3 .left div{
+			height:92px;
+		}
+		.pop3 .openylb-btu{
+
+		}
+		.pop3 .right{
+			width:149px;
+			height:133px;
+			background-position: -193px -294px;
+			top:27px;
+			right:23px;
+		}
+		.pop3 .right span{
+			padding: 12px 0 0 57px;
+		}
+		.fivedes{
+			color:#383838;
+			font-size: 19px;
+			line-height: 29px;
+			width:584px;
+			margin:0 auto 20px;
+			padding-bottom: 15px;
+			border-bottom:1px dashed #efab4a;
+		}
+		.fivebot{
+			width:584px;
+			margin:0 auto;
+			position: relative;
+		}
+		.fivebot p{
+			color:#000;
+			font-size: 23px;
+			line-height: 40px;
+			padding:14px 0 20px 0;
+		}
+		.code{
+			display: block;
+			width:116px;
+			height:116px;
+			background:url("https://img.alicdn.com/tfs/TB1dvo0X3oQMeJjy0FpXXcTxpXa-116-114.jpg") no-repeat center top;
+			position: absolute;
+			right:0;
+			top:0;
+		}
+	</style>
+</head>
+
+<body>
+<!-- 正式 start -->
+<div class="m-formal">
+	<!-- 专属优惠tab -->
+	<div class="exclusive-offerbox">
+		<ul>
+			<li class="current">
+				<span>专属优惠</span>
+				<em>9:00:00-13:59:59</em>
+			</li>
+			<li>
+				<span>千牛直播 更多惊喜</span>
+				<em>14:00:00-14:59:59</em>
+			</li>
+			<li>
+				<span>专属优惠</span>
+				<em>15:00:00-23:59:59</em>
+			</li>
+		</ul>
+	</div> 
+	<!-- 专属优惠内容 -->
+	<div class="main-box">
+		<img src="https://img.alicdn.com/tfs/TB1MLYIXwMPMeJjy1XbXXcwxVXa-990-39.png" width="990" height="39" alt="" />
+		<div class="main-center">
+			<div class="main-truebox">
+				<h2>恭喜你，获得以下优惠</h2>
+				<div class="tab-des">
+					<div>
+						<p>
+							<span>等额本金（12个月）/组合贷款</span>
+							<em>首期7折</em>
+						</p>
+						<em class="expiryDate">有效期：2017年9月27日当日有效</em>
+					</div>
+				</div>
+				<a href="" target="_blank" class="tab-btu" seed="atoncenine">马上支用</a>
+				<span class="tips">支用后抽取最高<em>1111</em>元利息红包</span>
+				<span class="line"></span>
+				<span class="live">下午14：00-15：00<br>网商银行助力双十一千牛直播<br>“贷”给你更多惊喜</span>
+			</div>
+			<div class="main-truebox online">
+				<div class="tab-des">
+					<div>
+						<p>
+							<span>等额本金（12个月）/组合贷款</span>
+							<em>首期6折</em>
+						</p>
+						<em class="expiryDate">有效期：2017年9月27日当日有效</em>
+					</div>
+				</div>
+				<span class="online-tips">直播期间优惠，过期无效</span>
+				<a href="" target="_blank" class="tab-btu" seed="atoncelive">马上支用</a>
+				<span class="tips">支用后抽取最高<em>1111</em>元利息红包</span>
+				<span class="line"></span>
+				<span class="live">网商银行助利双十一千牛直播进行时<br>以上折扣限当前1小时内有效</span>
+				<a href="" target="_blank" class="live-btu" seed="live">点此看直播>></a>
+			</div>
+			<div class="main-truebox">
+				<h2>恭喜你，获得以下优惠</h2>
+				<div class="tab-des">
+					<div>
+						<p>
+							<span>等额本金（12个月）/组合贷款</span>
+							<em>首期7折</em>
+						</p>
+						<em class="expiryDate">有效期：2017年9月27日当日有效</em>
+					</div>
+				</div>
+				<a href="" target="_blank" class="tab-btu" seed="atoncefifteen">马上支用</a>
+				<span class="tips">支用后抽取最高<em>1111</em>元利息红包</span>
+			</div>
+		</div>
+	</div>
+	<img src="https://img.alicdn.com/tfs/TB1qbrHXwoQMeJjy0FnXXb8gFXa-990-41.png" width="990" height="41" alt="" />
+	<!-- 活动规则 -->
+	<div class="rule">
+		<div class="rule-title">活动规则</div>
+		<dl>
+			<dt>活动时间：</dt>
+			<dd>预热时间：2017年8月24日（00:00:00）-2017年8月29日（23:59:59）</dd>
+			<dd>活动时间：2017年8月30日（09:00:00）-2017年8月30日（23:59:59）</dd>
+		</dl>
+		<span><em>活动对象：</em>具有网商贷信用贷款产品（等额本金（12个月）或组合贷）申请资格的用户。</span>
+		<span><em>参与优惠的产品类型：</em>淘宝/天猫信用贷款：随借随还（6个月）、等额本金（12个月）、组合贷</span>
+		<dl>
+			<dt>参与流程：</dt>
+			<dd>1、预热活动期间，卖家通过点击活动页面中的“活动当天请通知我”，在8月30日正式活动当天，可以使用贷款的卖家会收到相关的活动提醒，如旺旺、短信。</dd>
+			<dd>2、卖家如果在预热活动前未开通余利宝，预热期间开通余利宝自动转入可获得10元支付宝现金红包，该现金红包会在预热活动结束后的7个工作日内发放到店铺绑定的支付宝账户中。</dd>
+			<dd>3、正式活动期间，卖家通过网商贷首页申请支用或在活动页面点击“马上支用”按钮进行等额本金（12个月）或组合贷支用时，在借款申请页“优惠”中选择本活动对应的优惠，签署合同并获贷成功，即可获得相应优惠。</dd>
+			<dd>4、活动期间，卖家信用类贷款（等额本金（12个月）或组合贷）有可贷额度时，可多次享受活动优惠。</dd>
+		</dl>
+		<dl>
+			<dt>其它规则：</dt>
+			<dd>1、淘宝网和天猫卖家成功获贷的金额以贷款实际发放的金额为准。</dd>
+			<dd>2、淘宝网和天猫卖家所享受的优惠内容以贷款实际签订合同时的内容为准。</dd>
+			<dd>3、本活动优惠与其他折扣优惠不能同时使用。</dd>
+			<dd>4、活动过程中如发现有碍于其他卖家公平参与本活动或违反本活动目的之行为，网商银行&蚂蚁小贷有权取消有此行为的卖家参加本活动的资格或因参加活动所获的优惠。</dd>
+		</dl>
+	</div>
+</div>
+<!-- 正式 end -->	
+
+<!-- pop start-->
+<div class="pop-mask"></div>
+<!-- 我的抽奖结果 -->
+<div class="pop pop0">
+	<span class="title">— 我的抽奖结果 —</span>
+	<ul class="awardbox">
+		<li class="popbgimg favour">
+			<div class="left">
+				<span>您已经获得</span>
+				<p>首期9折优惠资格</p>
+			</div>
+			<div class="popbgimg right">
+				<div>
+					<p>
+						<span>等额本金（12个月）/组合贷款</span>
+						<em>首期9折</em>
+					</p>
+					<em class="expiryDate">有效期：2017年9月27日当日有效</em>
+				</div>
+			</div>
+		</li>
+		<li class="popbgimg redpacket">
+			<div class="left">
+				<div>
+					<p>5元支付宝现金红包</p>
+					<span>只要开通余利宝自动转存即可获得</span>
+				</div>
+				<a href="" target="_blank" seed="openyulibao" class="openylb-btu">开通余利宝 &gt;</a>
+			</div>
+			<div class="popbgimg right">
+				<span><em>&yen;</em>5</span>
+			</div>
+		</li>
+	</ul>
+	<span class="popbgimg close-btu close" seed="closepop"></span>
+</div>
+<!-- 很抱歉没有中奖 -->
+<div class="pop pop1">
+	<div class="popbgimg">
+		很遗憾，您没有中奖
+	</div>
+	<a href="javascript:void(0);" class="pop-btu close" seed="closenoawardspop"><em>关闭</em></a>
+	<span class="popbgimg close-btu close" seed="closepop"></span>
+</div>
+<!-- 获得优惠资格 -->
+<div class="pop pop2">
+	<div class="popbgimg own">
+		<h2>恭喜您获得以下优惠资格<span>请关注9月27日系统通知</span></h2>
+		<div>
+			<p>
+				<span>等额本金（12个月）/组合贷款</span>
+				<em>首期6折</em>
+			</p>
+			<em class="expiryDate">有效期：2017年9月27日当日有效</em>
+		</div>
+	</div>
+	<a href="javascript:void(0);" class="pop-btu" seed="closenoawardspop"><em>再抽1次</em></a>
+	<span class="awards-tips">人品爆发，还有 <em>1</em> 次抽奖机会，错过不再有</span>
+	<span class="popbgimg close-btu close" seed="closepop"></span>
+</div>
+<!-- 翻牌获得5元 -->
+<div class="pop pop3">
+	<ul class="awardbox">
+		<li class="popbgimg redpacket">
+			<div class="left">
+				<div>
+					<p><span>恭喜您获得</span>5元支付宝现金红包</p>
+					<span>只要开通余利宝自动转存即可获得</span>
+				</div>
+				<a href="" target="_blank" seed="openyulibao2" class="openylb-btu">开通余利宝 &gt;</a>
+			</div>
+			<div class="popbgimg right">
+				<span><em>&yen;</em>5</span>
+			</div>
+		</li>
+	</ul>
+	<p class="fivedes">您还有一项现金管理升级服务未开通，支持大额进出，当日免费转出，7日年化收益率?%(2017年X月X日），现在开通，得5元支付宝现金红包。</p>
+	<div class="fivebot">
+		<p>使用千牛扫一扫<br>登录千牛APP-点击我的-余利宝开通入口</p>
+		<span class="code"></span>
+	</div>
+	<span class="popbgimg close-btu close"></span>
+</div>
+<!-- pop end-->
+</body>
+</html>
+<script src="https://a.alipayobjects.com/jquery/jquery/1.7.2/jquery.js"></script>
+<script>
+(function(jQuery) {
+	// 正式-专属优惠tab按时间切换
+	var tabChange = function() {
+		var imgSrc = [
+			'https://img.alicdn.com/tfs/TB1_klVXwoQMeJjy0FpXXcTxpXa-990-110.png',
+			'https://img.alicdn.com/tfs/TB1ukzEXwMPMeJjy1XcXXXpppXa-990-110.png',
+			'https://img.alicdn.com/tfs/TB1ITTCXwoQMeJjy0FnXXb8gFXa-990-110.png'
+		];
+		var tabBox = jQuery('.exclusive-offerbox');//tab盒子节点
+		var tabUnit = jQuery('.exclusive-offerbox li');//tab按钮节点
+		var tabContainer = jQuery('.main-truebox');//tab内容节点
+		var _nowTime = new Date().getHours();//获取当前小时
+		if (_nowTime < 14) {
+			whitchTab(0);
+		} else if (_nowTime >= 14 && _nowTime < 15) {
+			whitchTab(1);
+		} else if (_nowTime >= 15) {
+			whitchTab(2);
+		}
+		function whitchTab(n) {
+			tabBox.css({'background-image': 'url(' + imgSrc[n] + ')'});
+			tabUnit.css({'color': '#a5a5a5'});
+			tabUnit.eq(n).css({'color': '#fff'});
+			tabContainer.hide();
+			tabContainer.eq(n).show();
+		}
+	}();
+	// pop
+	var pop = function() {
+		var _close = jQuery('.close');
+		var mask = jQuery('.pop-mask');
+		var _pop = jQuery('.pop');
+		_close.on('click', function() {
+			_pop.hide();
+			mask.hide();
+		});
+		// 显示对应的pop
+		function popshow(n) {
+			_pop.hide();
+			mask.show();
+			_pop.eq(n).show();
+		}
+		popshow(2);
+	}();
+})(jQuery);
+</script>
